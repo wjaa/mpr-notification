@@ -1,27 +1,17 @@
 package br.com.mpr.notification.service
 
-import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.mail.SimpleMailMessage
-import org.springframework.mail.javamail.JavaMailSender
-import org.springframework.stereotype.Component
+import org.apache.commons.mail.HtmlEmail
 
-
-@Component
-class MailService{
-
-    @Autowired
-    private lateinit var mailSender: JavaMailSender
-
-
-    fun sendMail(){
-
-        val message = SimpleMailMessage()
-        message.setTo("wag182@gmail.com")
-        message.setSubject("mandou essa porra")
-        message.setText("aeee caralho")
-        message.setFrom("noreply@meuportaretrato.com")
-        mailSender.send(message)
-
-
-    }
+fun sendMail(){
+    val mail = HtmlEmail()
+    mail.addTo("wag182@gmail.com")
+    mail.hostName = "smtp.zoho.com"
+    mail.setSmtpPort(465)
+    mail.setAuthentication("noreply@meuportaretrato.com", "*F071212f*")
+    mail.setFrom("noreply@meuportaretrato.com", "MeuPortaRetrato.com", "UTF-8")
+    mail.setHtmlMsg("corpo do email ")
+    mail.subject = "titulo do email"
+    mail.isSSLOnConnect = true
+    mail.setCharset("UTF-8")
+    mail.send()
 }
