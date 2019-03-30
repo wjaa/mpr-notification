@@ -208,7 +208,7 @@
 
     <!-- Visually Hidden Preheader Text : BEGIN -->
     <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
-        Seu pedido foi criado!
+        Seu pedido está a caminho!
     </div>
     <!-- Visually Hidden Preheader Text : END -->
 
@@ -248,15 +248,14 @@
                     <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                         <tr>
                             <td style="padding: 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
-                                <h1 style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #333333; font-weight: bold; text-align: center">Obrigado por comprar no meuportaretrato.com!</h1>
+                                <h1 style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #333333; font-weight: bold; text-align: center">Seu pedido está a caminho!</h1>
                             </td>
                         </tr>
                         <tr>
                             <td style="padding: 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
                                 <p style="margin: 0 0 10px;">Olá, {NOME_CLIENTE}</p>
-                                <p style="margin: 0 0 10px;">Recebemos seu pedido número <b>{NUMERO_PEDIDO}.</b></p>
-                                <p style="margin: 0 0 10px;">Iniciaremos a confecção do seu porta retrato agora. </b></p>
-                                <p style="margin: 0 0 10px;">Em caso de dúvidas, nossa equipe de atendimento poderá entrar em contato para verificar algumas informações.</b></p>
+                                <p style="margin: 0 0 10px;">Temos uma ótima notícia! Seu pedido <b>{NUMERO_PEDIDO}</b> acaba de ser enviado.</p>
+                                <p style="margin: 0 0 10px;">Você pode fazer visualizar sua nota fiscal aqui: <a style="color: #EF6621;" href="{LINK_NOTAFISCAL}"><b>{NUMERO_NOTAFISCAL}</b></a></p>
                             </td>
                         </tr>
                         <tr>
@@ -274,14 +273,52 @@
                         </tr>
                         <tr>
                             <td style="padding: 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
-                                <p style="margin: 0 0 10px;">Estes são os produtos registrados em sua compra:</p>
+                                <p style="margin: 0 0 10px;">Confira abaixo os produtos que você comprou:</p>
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 <table cellspacing="7" cellpadding="7" border="0">
-                                    {JSON_ITEMS}
+
+                                    <tr style="border-bottom:1px solid #cebeb5;border-radius:6px 6px 0 0">
+                                        <td><img src="http://stc.meuportaretrato.com/images/d/58c4299ab99a01b6c5b2c8742baf1ed6.png" width="100" height="" alt="alt_text" border="0" style="width: 100%; max-width: 100px; height: auto; font-family: sans-serif; font-size: 15px; line-height: 15px; margin: auto; display: block;" class="g-img"></td>
+                                        <td style="padding: 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
+                                            <p style="margin: 0 0 10px;">Porta retrato 10x15</p>
+                                            <p style="margin: 0 0 10px; color: #9b9b9b;">Quantidade: 1</p>
+                                            <p style="margin: 0 0 10px;">R$ 29,90</p>
+                                        </td>
+
+                                    </tr>
+                                    <tr style="border-bottom:1px solid #cebeb5;border-radius:6px 6px 0 0">
+                                        <td><img src="http://stc.meuportaretrato.com/images/email/impressao_foto.png" width="100" height="" alt="alt_text" border="0" style="width: 100%; max-width: 100px; height: auto; font-family: sans-serif; font-size: 15px; line-height: 15px; margin: auto; display: block;" class="g-img"></td>
+                                        <td style="padding: 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
+                                            <p style="margin: 0 0 10px;">Impressão de foto</p>
+                                            <p style="margin: 0 0 10px; color: #9b9b9b;">Quantidade: 1</p>
+                                            <p style="margin: 0 0 10px;">Grátis</p>
+                                        </td>
+
+                                    </tr>
+                                    <tr style="border-bottom:1px solid #cebeb5;border-radius:6px 6px 0 0">
+                                        <td><img src="http://stc.meuportaretrato.com/images/d/337706cd7f0ce8a2e18bfd0081384c3e.png" width="100" height="" alt="alt_text" border="0" style="width: 100%; max-width: 100px; height: auto; font-family: sans-serif; font-size: 15px; line-height: 15px; margin: auto; display: block;" class="g-img"></td>
+                                        <td style="padding: 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
+                                            <p style="margin: 0 0 10px;">Porta retrato 10x15</p>
+                                            <p style="margin: 0 0 10px; color: #9b9b9b;">Quantidade: 1</p>
+                                            <p style="margin: 0 0 10px;">R$ 29,90</p>
+                                        </td>
+
+                                    </tr>
+                                    <tr style="border-bottom:1px solid #cebeb5;border-radius:6px 6px 0 0">
+                                        <td><img src="http://stc.meuportaretrato.com/images/email/impressao_foto.png" width="100" height="" alt="alt_text" border="0" style="width: 100%; max-width: 100px; height: auto; font-family: sans-serif; font-size: 15px; line-height: 15px; margin: auto; display: block;" class="g-img"></td>
+                                        <td style="padding: 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
+                                            <p style="margin: 0 0 10px;">Impressão de foto</p>
+                                            <p style="margin: 0 0 10px; color: #9b9b9b;">Quantidade: 1</p>
+                                            <p style="margin: 0 0 10px;">Grátis</p>
+                                        </td>
+
+                                    </tr>
+
                                 </table>
+
                             </td>
                         </tr>
                         <tr>
@@ -366,10 +403,10 @@
                             </td>
                         </tr>
                         <tr>
-                            <td style="padding: 0 20px 0 20px;font-family:Helvetica,Arial,sans-serif;font-size:16px;color:#333">E agora, o que tenho que fazer?</td>
+                            <td style="padding: 0 20px 0 20px;font-family:Helvetica,Arial,sans-serif;font-size:16px;color:#333">E agora, qual o próximo passo?</td>
                         </tr>
                         <tr>
-                            <td style="padding: 0 20px 0 20px;font-family:Helvetica,Arial,sans-serif;font-size:14px;line-height:20px;color:#666">Assim que o pagamento for confirmado, você receberá um email com instruções para acompanhar o seu pedido.</td>
+                            <td style="padding: 0 20px 0 20px;font-family:Helvetica,Arial,sans-serif;font-size:14px;line-height:20px;color:#666">Acompanhe seu pedido pelo <a style="color: #EF6621;" href="{LINK_PEDIDO">nosso site</a> ou pelo aplicativo. Baixe o App e receba dicas e promoções.</td>
                         </tr>
 
                         <tr>
