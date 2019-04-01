@@ -4,7 +4,6 @@ import java.io.InputStream
 import java.io.InputStreamReader
 
 fun getString(resourceAsStream: InputStream?): String {
-    println(resourceAsStream)
     val fileReader = InputStreamReader(resourceAsStream)
     val body = StringBuilder()
     val bff = CharArray(1024)

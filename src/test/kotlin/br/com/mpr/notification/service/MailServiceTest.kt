@@ -7,16 +7,85 @@ import java.lang.StringBuilder
 
 class MailServiceTest {
 
-
+    val emails = "wag182@gmail.com;feehpinazo@gmail.com"
+    //val emails = "ti.wagnerj@braspress.com"
 
     @Test
-    fun send() {
-        val param = ParamEmail("wag182@gmail.com",
+    fun sendEmailPedidoCriado() {
+        val param = ParamEmail(emails,
                 EmailTemplate.PEDIDO_CRIADO,mapOf("{NOME_CLIENTE}" to "Wagner Jeronimo",
                 "{NUMERO_PEDIDO}" to "123456789",
                 "{LINK_PEDIDO}" to "https://meuportaretrato.com",
-                "{JSON_ITEMS}" to createJsonItens()
+                "{JSON_ITEMS}" to createJsonItens(),
+                "{IMG_TIPO_PAGAMENTO}" to "https://static.belezanaweb.com.br/email_template/images/17011302/mastercard.png",
+                "{TIPO_PAGAMENTO}" to "Cartão de Crédito",
+                "{SUB_TOTAL}" to "50,50",
+                "{FRETE}" to "12,00",
+                "{TOTAL}" to "62,50",
+                "{NOME_ENDERECO}" to "Endereço de Casa",
+                "{ENDERECO_1}" to "Rua antonio gomes, 135 apto 133 bloco natureza",
+                "{ENDERECO_2}" to "07093090 GUARULHOS SP",
+                "{ENDERECO_REFERENCIA}" to "Travessa da mae dos homens",
+                "{TIPO_FRETE}" to "Express",
+                "{DIAS_ENTREGA}" to "2"
+
                 )
+        )
+        sendMail(param)
+    }
+
+    @Test
+    fun sendEmailPedidoEnviado() {
+        val param = ParamEmail(emails,
+                EmailTemplate.PEDIDO_ENVIADO,mapOf("{NOME_CLIENTE}" to "Wagner Jeronimo",
+                "{NUMERO_PEDIDO}" to "123456789",
+                "{LINK_PEDIDO}" to "https://meuportaretrato.com",
+                "{LINK_NOTAFISCAL}" to "https://meuportaretrato.com",
+                "{NUMERO_NOTAFISCAL}" to "8745889",
+                "{JSON_ITEMS}" to createJsonItens(),
+                "{IMG_TIPO_PAGAMENTO}" to "https://static.belezanaweb.com.br/email_template/images/17011302/mastercard.png",
+                "{TIPO_PAGAMENTO}" to "Cartão de Crédito",
+                "{SUB_TOTAL}" to "50,50",
+                "{FRETE}" to "12,00",
+                "{TOTAL}" to "62,50",
+                "{NOME_ENDERECO}" to "Endereço de Casa",
+                "{ENDERECO_1}" to "Rua antonio gomes, 135 apto 133 bloco natureza",
+                "{ENDERECO_2}" to "07093090 GUARULHOS SP",
+                "{ENDERECO_REFERENCIA}" to "Travessa da mae dos homens",
+                "{TIPO_FRETE}" to "Express",
+                "{DIAS_ENTREGA}" to "2"
+            )
+        )
+        sendMail(param)
+    }
+
+    @Test
+    fun sendEmailPedidoCancelado() {
+        val param = ParamEmail(emails,
+                EmailTemplate.PEDIDO_CANCELADO,mapOf("{NOME_CLIENTE}" to "Wagner Jeronimo",
+                "{NUMERO_PEDIDO}" to "123456789",
+                "{LINK_PEDIDO}" to "https://meuportaretrato.com",
+                "{JSON_ITEMS}" to createJsonItens()
+            )
+        )
+        sendMail(param)
+    }
+
+    @Test
+    fun sendEmailEsqueceuSenha() {
+        val param = ParamEmail(emails,
+                EmailTemplate.ESQUECEU_SENHA,mapOf("{NOME_CLIENTE}" to "Wagner Jeronimo",
+                "{LINK_TROCA_SENHA}" to "https://meuportaretrato.com"
+            )
+        )
+        sendMail(param)
+    }
+
+    @Test
+    fun sendEmailNovoCliente() {
+        val param = ParamEmail(emails,
+                EmailTemplate.USUARIO_CRIADO,mapOf("{NOME_CLIENTE}" to "Wagner Jeronimo"
+            )
         )
         sendMail(param)
     }

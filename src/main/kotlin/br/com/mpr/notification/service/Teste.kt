@@ -5,9 +5,8 @@ import com.google.gson.GsonBuilder
 import java.lang.StringBuilder
 
 fun main() {
-    val g = GsonBuilder().create()
-    val param = g.fromJson<ParamJsonEmail>(createJsonItens(),ParamJsonEmail::class.java)
-    println(param.items)
+    val html = "<html> fdajklfdsjklfsd fdsaf sd fsdfsad AQUI=   {JSON-VALOR} </html>"
+    print(html.replace(Regex("\\{[a-zA-Z_\\-]+\\}"),"CHUPA"))
 
 }
 

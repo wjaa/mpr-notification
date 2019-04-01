@@ -12,17 +12,15 @@ fun buildBody(param : ParamEmail): String {
 
         //SE TIVER UM PARAMETRO JSON É PORQUE É UM PARAMETRO ESPECIAL
         //ex.: para itens do pedido virá uma lista values para montar os itens.
-        //o template precisa ter um resource separado para isso.
+        //o template precisa ter um resource separado para isso. Veja htmlExtra na classe EmailTemplate
         if (!key.contains("JSON")){
             strBody = strBody.replace(Regex.fromLiteral(key),value)
         }else{
             strBody = strBody.replaceFirst(key,getReplaceJson(value,param.template.htmlExtra))
         }
-
-
     }
 
-    return strBody
+    return strBody.replace(Regex("\\{[a-zA-Z_\\-]+\\}"),"")
 
 }
 
@@ -36,7 +34,6 @@ fun getReplaceJson(json: String, html: String): String {
         i.values.forEach { v -> item = item.replace(Regex.fromLiteral(v.key), v.value) }
         strBuilder.append(item)
     }
-    println(strBuilder)
     return strBuilder.toString()
 
 }

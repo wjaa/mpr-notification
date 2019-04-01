@@ -208,7 +208,7 @@
 
     <!-- Visually Hidden Preheader Text : BEGIN -->
     <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
-        Seu pedido foi criado!
+        Seu pedido foi cancelado!
     </div>
     <!-- Visually Hidden Preheader Text : END -->
 
@@ -248,20 +248,14 @@
                     <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                         <tr>
                             <td style="padding: 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
-                                <h1 style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #333333; font-weight: bold; text-align: center">Obrigado por comprar no MeuPortaRetrato.com!</h1>
+                                <h1 style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #333333; font-weight: bold; text-align: center">Infelizmente seu pedido foi cancelado!</h1>
                             </td>
                         </tr>
                         <tr>
                             <td style="padding: 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
                                 <p style="margin: 0 0 10px;">Olá, {NOME_CLIENTE}</p>
-                                <p style="margin: 0 0 10px;">Recebemos seu pedido número <b>{NUMERO_PEDIDO}.</b></p>
-                                <p style="margin: 0 0 10px;">Iniciaremos a confecção do seu porta retrato agora. </b></p>
-                                <p style="margin: 0 0 10px;">Em caso de dúvidas, nossa equipe de atendimento poderá entrar em contato para verificar algumas informações.</b></p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
-                                <p style="margin: 0 0 10px;">Estes são os produtos registrados em sua compra:</p>
+                                <p style="margin: 0 0 10px;">Seu pedido número <b>{NUMERO_PEDIDO}</b>, foi cancelado!</p>
+                                <p style="margin: 0 0 10px;">Estes são os produtos registrados no seu pedido:</p>
                             </td>
                         </tr>
                         <tr>
@@ -276,80 +270,14 @@
                                 &nbsp;
                             </td>
                         </tr>
-
-                        <tr>
-                            <td valign="middle" style="padding:50px 20px 0 20px;font-size:14px;line-height:21px;font-family:Helvetica,Arial,sans-serif;color:#4a4a4a">
-                                <p style="margin: 0 0 10px; font-size:18px">Endereço de entrega</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="padding:0 20px 0 20px;font-size:14px;line-height:10px;font-family:Helvetica,Arial,sans-serif;color:#333">
-                                <p style="margin: 0 0 10px;"><b>{NOME_ENDERECO}</b></p>
-                                <p style="margin: 0 0 10px;">{ENDERECO_1}</p>
-                                <p style="margin: 0 0 10px;">{ENDERECO_2}</p>
-                                <p style="margin: 0 0 10px;">{ENDERECO_REFERENCIA}</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td valign="middle" style="padding:20px 20px 0 20px;font-size:14px;line-height:21px;font-family:Helvetica,Arial,sans-serif;color:#4a4a4a">
-                                <p style="margin: 0 0 10px; font-size:18px">Frete</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="padding:0 20px 0 20px;font-size:14px;line-height:10px;font-family:Helvetica,Arial,sans-serif;">
-                                <p style="margin: 0 0 10px; color:#417505;font-weight:bold">{TIPO_FRETE}</p>
-                                <p style="margin: 0 0 10px; color:#417505;font-weight:bold">Previsão de entrega de até {DIAS_ENTREGA} dias úteis.</p>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td valign="middle" style="padding:20px 20px 0 20px;font-size:14px;line-height:21px;font-family:Helvetica,Arial,sans-serif;color:#4a4a4a">
-                                <p style="margin: 0 0 10px; font-size:18px">Pagamento</p>
-                                <img src="{IMG_TIPO_PAGAMENTO}" height="21" width="36" style="vertical-align:middle" alt="payment-ico" class="CToWUd">
-
-                                <span style="vertical-align:middle">{TIPO_PAGAMENTO}</span></td>
-                        </tr>
-
-                        <tr>
-                            <td align="left" style="padding-bottom:20px">
-                                <table border="0" cellpadding="0" cellspacing="0" width="100%" >
-                                    <tbody><tr>
-                                        <td align="right" width="80" style="padding-right:10px;padding-top:10px;font-size:14px;line-height:18px;font-family:Helvetica,Arial,sans-serif;color:#4a4a4a">Subtotal:</td>
-                                        <td style="font-size:14px;line-height:20px;padding-top:10px;font-family:Helvetica,Arial,sans-serif;color:#4a4a4a">{SUB_TOTAL}</td>
-                                    </tr>
-                                    <tr>
-                                        <td align="right" width="80" style="padding-right:10px;font-size:14px;line-height:18px;font-family:Helvetica,Arial,sans-serif;color:#4a4a4a">Frete:</td>
-                                        <td style="font-size:14px;line-height:18px;font-family:Helvetica,Arial,sans-serif;color:#4a4a4a";>{FRETE}</td>
-                                    </tr>
-                                    <tr>
-                                        <td style="padding-left:30px;">
-                                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="width:150px;">
-                                                <tbody>
-                                                <tr>
-                                                    <td style="font-size:5px;border-bottom:2px solid #e6e6e6;">&nbsp;</td>
-                                                    <td style="font-size:5px;border-bottom:2px solid #e6e6e6;">&nbsp;</td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
-                                        </td>
-
-                                    </tr>
-                                    <tr>
-                                        <td align="right" valign="middle" width="80" style="padding-top:5px;padding-right:10px;font-size:14px;line-height:18px;font-family:Helvetica,Arial,sans-serif;color:#4a4a4a">Total:</td>
-                                        <td valign="middle" style="padding-top:5px;font-size:16px;line-height:20px;font-family:Helvetica,Arial,sans-serif;color:#ff6c00;font-weight:bold">{TOTAL}</td>
-                                    </tr>
-                                    </tbody></table>
-                            </td>
-                        </tr>
-
                         <tr>
                             <td>
                                 &nbsp;
                             </td>
                         </tr>
                         <tr>
-                            <td>
-                                &nbsp;
+                            <td style="padding: 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
+                                <p style="margin: 0 0 10px;">Para mais detalhes do cancelamento, clique no botão abaixo.</p>
                             </td>
                         </tr>
                         <tr>
@@ -358,7 +286,7 @@
                                 <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
                                     <tr>
                                         <td class="button-td button-td-primary" style="border-radius: 4px; background: #222222;">
-                                            <a class="button-a button-a-primary" href="{LINK_PEDIDO}" style="background: #EF6621; border: 1px solid #af5021; font-family: sans-serif; font-size: 15px; line-height: 15px; text-decoration: none; padding: 13px 17px; color: #ffffff; display: block; border-radius: 4px;">ACOMPANHE SEU PEDIDO</a>
+                                            <a class="button-a button-a-primary" href="{LINK_PEDIDO}" style="background: #EF6621; border: 1px solid #af5021; font-family: sans-serif; font-size: 15px; line-height: 15px; text-decoration: none; padding: 13px 17px; color: #ffffff; display: block; border-radius: 4px;">DETALHES DO PEDIDO</a>
                                         </td>
                                     </tr>
                                 </table>
@@ -367,7 +295,7 @@
                         </tr>
 
                         <tr>
-                            <td align="left" style="padding:20px; padding-top:30px;font-size:14px;line-height:18px;font-family:Helvetica,Arial,sans-serif;color:#4a4a4a">Aproveite!<br>
+                            <td align="left" style="padding:20px; padding-top:30px;font-size:14px;line-height:18px;font-family:Helvetica,Arial,sans-serif;color:#4a4a4a">Att.,<br>
                                 Time meuportaretrato.com</td>
                         </tr>
                         <tr>
