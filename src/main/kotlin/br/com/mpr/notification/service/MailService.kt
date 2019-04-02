@@ -1,21 +1,50 @@
 package br.com.mpr.notification.service
 
+import br.com.mpr.notification.props.MailProperties
 import br.com.mpr.notification.vo.ParamEmail
+import br.com.mpr.notification.vo.SendResult
+import org.apache.commons.mail.EmailException
 import org.apache.commons.mail.HtmlEmail
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.core.env.Environment
+import org.springframework.stereotype.Service
 
-fun sendMail(param: ParamEmail){
+@Service
+class MailService{
 
-    val body = buildBody(param)
+    @Autowired
+    lateinit var properties : MailProperties
 
-    val mail = HtmlEmail()
-    param.to.split(Regex.fromLiteral(";")).forEach { e -> mail.addTo(e) ; println(e)}
-    mail.hostName = "smtp.gmail.com"
-    mail.setSmtpPort(465)
-    mail.setAuthentication("noreply@meuportaretrato.com", "*f071212*")
-    mail.setFrom(param.template.from, "MeuPortaRetrato.com", "UTF-8")
-    mail.setHtmlMsg(body)
-    mail.subject = param.template.title
-    mail.isSSLOnConnect = true
-    mail.setCharset("UTF-8")
-    mail.send()
+    @Autowired
+    lateinit var environment: Environment
+
+    fun sendMail(param: ParamEmail): SendResult {
+
+        try{
+            val body = buildBody(param)
+            val mail = HtmlEmail()
+            param.to.split(Regex.fromLiteral(";")).forEach { e -> mail.addTo(e) ; println(e)}
+            mail.hostName = properties.hostName
+            mail.setSmtpPort(properties.port.toInt())
+            mail.setAuthentication(properties.user, properties.pass)
+            mail.setFrom(param.template.from, properties.fromName, Charsets.UTF_8.name())
+            mail.setHtmlMsg(body)
+            mail.subject = param.template.title
+            mail.isSSLOnConnect = true
+            mail.setCharset(Charsets.UTF_8.name())
+
+
+            if ( !environment.activeProfiles.contains("test") ){
+                mail.send()
+            }
+        }catch (e : EmailException){
+            return SendResult(true,e.message.toString())
+
+        }catch (e : Exception){
+            return SendResult(true,e.message.toString())
+        }
+
+        return SendResult(false,"ok")
+    }
+
 }

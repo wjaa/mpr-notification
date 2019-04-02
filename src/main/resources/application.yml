@@ -3,3 +3,13 @@ logging:
     org:
       springframework:
         web: DEBUG
+
+
+mail:
+  props:
+    hostName: "smtp.gmail.com"
+    port: 465
+    user: "noreply@meuportaretrato.com"
+    pass: "*f071212*"
+    fromName: "MeuPortaRetrato.com"
+

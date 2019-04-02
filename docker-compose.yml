@@ -1,0 +1,15 @@
+version: '2'
+services:
+  notification:
+    container_name: notification
+    build: .
+    ports:
+      - "8282:8080"
+    image: mpr/notification
+    environment:
+      profile: prd
+    stdin_open: true
+    tty: true
+    volumes:
+      - /etc/localtime:/etc/localtime
+    domainname: notification.meuportaretrato.com

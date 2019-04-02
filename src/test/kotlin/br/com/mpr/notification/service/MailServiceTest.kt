@@ -3,12 +3,24 @@ package br.com.mpr.notification.service
 import br.com.mpr.notification.vo.EmailTemplate
 import br.com.mpr.notification.vo.ParamEmail
 import org.junit.Test
+import org.junit.runner.RunWith
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.boot.test.context.SpringBootTest
+import org.springframework.context.annotation.Profile
+import org.springframework.test.context.ActiveProfiles
+import org.springframework.test.context.junit4.SpringRunner
 import java.lang.StringBuilder
 
+@RunWith(SpringRunner::class)
+@SpringBootTest
+@ActiveProfiles("test")
 class MailServiceTest {
 
-    val emails = "wag182@gmail.com;feehpinazo@gmail.com"
-    //val emails = "ti.wagnerj@braspress.com"
+    @Autowired
+    lateinit var mailService: MailService
+
+    //val emails = "wag182@gmail.com;feehpinazo@gmail.com"
+    val emails = "ti.wagnerj@braspress.com"
 
     @Test
     fun sendEmailPedidoCriado() {
@@ -31,7 +43,7 @@ class MailServiceTest {
 
                 )
         )
-        sendMail(param)
+        mailService.sendMail(param)
     }
 
     @Test
@@ -56,7 +68,7 @@ class MailServiceTest {
                 "{DIAS_ENTREGA}" to "2"
             )
         )
-        sendMail(param)
+        mailService.sendMail(param)
     }
 
     @Test
@@ -68,7 +80,7 @@ class MailServiceTest {
                 "{JSON_ITEMS}" to createJsonItens()
             )
         )
-        sendMail(param)
+        mailService.sendMail(param)
     }
 
     @Test
@@ -78,7 +90,7 @@ class MailServiceTest {
                 "{LINK_TROCA_SENHA}" to "https://meuportaretrato.com"
             )
         )
-        sendMail(param)
+        mailService.sendMail(param)
     }
 
     @Test
@@ -87,7 +99,7 @@ class MailServiceTest {
                 EmailTemplate.USUARIO_CRIADO,mapOf("{NOME_CLIENTE}" to "Wagner Jeronimo"
             )
         )
-        sendMail(param)
+        mailService.sendMail(param)
     }
 
     private fun createJsonItens(): String {
