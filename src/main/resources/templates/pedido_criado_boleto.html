@@ -208,7 +208,7 @@
 
     <!-- Visually Hidden Preheader Text : BEGIN -->
     <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
-        Seu pedido está a caminho!
+        Seu pedido foi criado!
     </div>
     <!-- Visually Hidden Preheader Text : END -->
 
@@ -248,32 +248,40 @@
                     <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                         <tr>
                             <td style="padding: 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
-                                <h1 style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #333333; font-weight: bold; text-align: center">Seu pedido está a caminho!</h1>
+                                <h1 style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #333333; font-weight: bold; text-align: center">Obrigado por comprar no MeuPortaRetrato.com!</h1>
                             </td>
                         </tr>
                         <tr>
                             <td style="padding: 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
                                 <p style="margin: 0 0 10px;">Olá, {NOME_CLIENTE}</p>
-                                <p style="margin: 0 0 10px;">Temos uma ótima notícia! Seu pedido <b>{NUMERO_PEDIDO}</b> acaba de ser enviado.</p>
-                                <p style="margin: 0 0 10px;">Você pode fazer visualizar sua nota fiscal aqui: <a style="color: #EF6621;" href="{LINK_NOTAFISCAL}"><b>{NUMERO_NOTAFISCAL}</b></a></p>
+                                <p style="margin: 0 0 10px;">Recebemos seu pedido com código: <b>{NUMERO_PEDIDO}</b></p>
+                                <p style="margin: 0 0 10px;">Clique no botão abaixo para visualizar o boleto.</b></p>
                             </td>
                         </tr>
+
                         <tr>
                             <td style="padding: 0 20px 20px;">
                                 <!-- Button : BEGIN -->
                                 <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
                                     <tr>
                                         <td class="button-td button-td-primary" style="border-radius: 4px; background: #222222;">
-                                            <a class="button-a button-a-primary" target="_blank" href="{LINK_PEDIDO}" style="background: #EF6621; border: 1px solid #af5021; font-family: sans-serif; font-size: 15px; line-height: 15px; text-decoration: none; padding: 13px 17px; color: #ffffff; display: block; border-radius: 4px;">ACOMPANHE SEU PEDIDO</a>
+                                            <a class="button-a button-a-primary" target="_blank" href="{LINK_BOLETO}" style="background: #EF6621; border: 1px solid #af5021; font-family: sans-serif; font-size: 15px; line-height: 15px; text-decoration: none; padding: 13px 17px; color: #ffffff; display: block; border-radius: 4px;">ABRIR BOLETO</a>
                                         </td>
                                     </tr>
                                 </table>
                                 <!-- Button : END -->
                             </td>
                         </tr>
+
+                        <tr>
+                            <td style="padding: 0px 20px 0px 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
+                                <p style="margin: 0 0 10px;">Iniciaremos a confecção do seu porta retrato após a confirmação do pagamento. </b></p>
+                                <p style="margin: 0 0 10px;">Em caso de dúvidas, nossa equipe de atendimento poderá entrar em contato para verificar algumas informações.</b></p>
+                            </td>
+                        </tr>
                         <tr>
                             <td style="padding: 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
-                                <p style="margin: 0 0 10px;">Confira abaixo os produtos que você comprou:</p>
+                                <p style="margin: 0 0 10px;">Estes são os produtos registrados em sua compra:</p>
                             </td>
                         </tr>
                         <tr>
@@ -281,7 +289,6 @@
                                 <table cellspacing="7" cellpadding="7" border="0">
                                     {JSON_ITEMS}
                                 </table>
-
                             </td>
                         </tr>
                         <tr>
@@ -328,11 +335,11 @@
                                 <table border="0" cellpadding="0" cellspacing="0" width="100%" >
                                     <tbody><tr>
                                         <td align="right" width="80" style="padding-right:10px;padding-top:10px;font-size:14px;line-height:18px;font-family:Helvetica,Arial,sans-serif;color:#4a4a4a">Subtotal:</td>
-                                        <td style="font-size:14px;line-height:20px;padding-top:10px;font-family:Helvetica,Arial,sans-serif;color:#4a4a4a">R$ {SUB_TOTAL}</td>
+                                        <td style="font-size:14px;line-height:20px;padding-top:10px;font-family:Helvetica,Arial,sans-serif;color:#4a4a4a">{SUB_TOTAL}</td>
                                     </tr>
                                     <tr>
                                         <td align="right" width="80" style="padding-right:10px;font-size:14px;line-height:18px;font-family:Helvetica,Arial,sans-serif;color:#4a4a4a">Frete:</td>
-                                        <td style="font-size:14px;line-height:18px;font-family:Helvetica,Arial,sans-serif;color:#4a4a4a";>R$ {FRETE}</td>
+                                        <td style="font-size:14px;line-height:18px;font-family:Helvetica,Arial,sans-serif;color:#4a4a4a";>{FRETE}</td>
                                     </tr>
                                     <tr>
                                         <td style="padding-left:30px;">
@@ -349,7 +356,7 @@
                                     </tr>
                                     <tr>
                                         <td align="right" valign="middle" width="80" style="padding-top:5px;padding-right:10px;font-size:14px;line-height:18px;font-family:Helvetica,Arial,sans-serif;color:#4a4a4a">Total:</td>
-                                        <td valign="middle" style="padding-top:5px;font-size:16px;line-height:20px;font-family:Helvetica,Arial,sans-serif;color:#ff6c00;font-weight:bold">R$ {TOTAL}</td>
+                                        <td valign="middle" style="padding-top:5px;font-size:16px;line-height:20px;font-family:Helvetica,Arial,sans-serif;color:#ff6c00;font-weight:bold">{TOTAL}</td>
                                     </tr>
                                     </tbody></table>
                             </td>
@@ -365,6 +372,20 @@
                                 &nbsp;
                             </td>
                         </tr>
+                        <tr>
+                            <td style="padding: 0 20px 20px;">
+                                <!-- Button : BEGIN -->
+                                <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                                    <tr>
+                                        <td class="button-td button-td-primary" style="border-radius: 4px; background: #222222;">
+                                            <a class="button-a button-a-primary" target="_blank" href="{LINK_PEDIDO}" style="background: #EF6621; border: 1px solid #af5021; font-family: sans-serif; font-size: 15px; line-height: 15px; text-decoration: none; padding: 13px 17px; color: #ffffff; display: block; border-radius: 4px;">ACOMPANHE SEU PEDIDO</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <!-- Button : END -->
+                            </td>
+                        </tr>
+
                         <tr>
                             <td align="left" style="padding:20px; padding-top:30px;font-size:14px;line-height:18px;font-family:Helvetica,Arial,sans-serif;color:#4a4a4a">Aproveite!<br>
                                 Time meuportaretrato.com</td>
@@ -408,7 +429,7 @@
             </tr>
             <tr>
                 <td style="padding: 20px; font-family: sans-serif; font-size: 12px; line-height: 15px; text-align: center; color: #545454;">
-                    <a  target="_blank" href="https://meuportaretrato.com" style="color: #545454; text-decoration: underline; font-weight: bold;">Visite nosso site</a>
+                    <a target="_blank" href="https://meuportaretrato.com" style="color: #545454; text-decoration: underline; font-weight: bold;">Visite nosso site</a>
                     <br><br>
                     meuportaretrato.com<br><span class="unstyle-auto-detected-links">CNPJ: 32.600.281/0001-00<br>Tel: (11) 9999-7890 (Whatsapp)</span>
                     <br><br>

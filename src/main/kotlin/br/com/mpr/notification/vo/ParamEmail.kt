@@ -10,4 +10,5 @@ data class ParamEmail(@field:NotEmpty(message = "Atributo 'to' nao pode ser null
                       val to : String,
                       @field:NotNull(message = "Atributo 'template' nao pode ser null")
                       val template : EmailTemplate,
-                      val params : Map<String,String>)
+                      val params : Map<String,String>,
+                      val title : String = "")

@@ -18,6 +18,12 @@ enum class EmailTemplate( val htmlPrincipal: String, val from: String, val title
             "Pedido Criado!",
             getString(this.javaClass.classLoader.getResourceAsStream("templates/itens_pedido.html"))),
 
+    PEDIDO_CRIADO_BOLETO(
+            getString(this.javaClass.classLoader.getResourceAsStream("templates/pedido_criado_boleto.html")),
+            "noreply@meuportaretrato.com",
+            "Pedido Criado!",
+            getString(this.javaClass.classLoader.getResourceAsStream("templates/itens_pedido.html"))),
+
     PEDIDO_CANCELADO(
             getString(this.javaClass.classLoader.getResourceAsStream("templates/pedido_cancelado.html")),
             "noreply@meuportaretrato.com",

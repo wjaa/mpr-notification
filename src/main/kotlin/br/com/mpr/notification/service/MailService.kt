@@ -29,7 +29,8 @@ class MailService{
             mail.setAuthentication(properties.user, properties.pass)
             mail.setFrom(param.template.from, properties.fromName, Charsets.UTF_8.name())
             mail.setHtmlMsg(body)
-            mail.subject = param.template.title
+            if (param.title != "") mail.subject = param.title
+            else mail.subject = param.template.title
             mail.isSSLOnConnect = true
             mail.setCharset(Charsets.UTF_8.name())
 
