@@ -12,8 +12,14 @@ enum class EmailTemplate( val htmlPrincipal: String, val from: String, val title
             getString(this.javaClass.classLoader.getResourceAsStream("templates/itens_pedido.html"))),
 
 
-    PEDIDO_CRIADO(
-            getString(this.javaClass.classLoader.getResourceAsStream("templates/pedido_criado.html")),
+    PEDIDO_CONFIRMADO(
+            getString(this.javaClass.classLoader.getResourceAsStream("templates/pedido_confirmado.html")),
+            "noreply@meuportaretrato.com",
+            "Pedido Confirmado!",
+            getString(this.javaClass.classLoader.getResourceAsStream("templates/itens_pedido.html"))),
+
+    PEDIDO_CRIADO_CARTAO(
+            getString(this.javaClass.classLoader.getResourceAsStream("templates/pedido_criado_cartao.html")),
             "noreply@meuportaretrato.com",
             "Pedido Criado!",
             getString(this.javaClass.classLoader.getResourceAsStream("templates/itens_pedido.html"))),

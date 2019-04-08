@@ -6,7 +6,6 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
-import org.springframework.context.annotation.Profile
 import org.springframework.test.context.ActiveProfiles
 import org.springframework.test.context.junit4.SpringRunner
 import java.lang.StringBuilder
@@ -25,7 +24,7 @@ class MailServiceTest {
     @Test
     fun sendEmailPedidoCriado() {
         val param = ParamEmail(emails,
-                EmailTemplate.PEDIDO_CRIADO,mapOf("{NOME_CLIENTE}" to "Wagner Jeronimo",
+                EmailTemplate.PEDIDO_CONFIRMADO,mapOf("{NOME_CLIENTE}" to "Wagner Jeronimo",
                 "{NUMERO_PEDIDO}" to "123456789",
                 "{LINK_PEDIDO}" to "https://meuportaretrato.com",
                 "{JSON_ITEMS}" to createJsonItens(),
