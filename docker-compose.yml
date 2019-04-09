@@ -1,5 +1,16 @@
 version: '2'
 services:
+  nginx:
+    depends_on:
+      - notification
+    container_name: nginx-nt
+    build: nginx/.
+    image: mpr/nginx-nt
+    ports:
+      - "18282:80"
+    stdin_open: true
+    tty: true
+    domainname: meuportaretrato.com
   notification:
     container_name: notification
     build: .
